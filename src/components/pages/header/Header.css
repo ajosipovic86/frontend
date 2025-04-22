@@ -1,0 +1,35 @@
+.izm-hamburger{
+    display: inline-block;
+    width: 16px;
+    height: 20px;
+    vertical-align: middle;
+    position: relative;
+  }
+  .izm-hamburger span {
+    position: absolute;
+    display: block;
+    height: 1px;
+    width: 100%;
+    background: #fff;
+    margin-top: 4px;
+    transition: all 300ms linear;
+  }
+  .izm-hamburger span.druga{
+    top: 4px;
+  }
+  .izm-hamburger span.treca{
+    top: 8px;
+  }
+  .navbar-toggler:not(.collapsed) .izm-hamburger span.prva{
+    transform: rotate(45deg);
+    top: 4px;
+  }
+  .navbar-toggler:not(.collapsed) .izm-hamburger span.druga{
+    display: none;
+  }
+  .navbar-toggler:not(.collapsed) .izm-hamburger span.treca{
+    transform: rotate(-45deg);
+    top: 4px;
+  }
+ 
+ 
