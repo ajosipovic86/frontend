@@ -1,11 +1,51 @@
-.blog h1{
-    font-size: 36px;
-    margin: 40px 0px;
-    text-align: left;
-    font-weight: 700;
+.blog-container {
+background-color: #96dfd2;
 }
 
-.single-post h1{
-    font-size: 36px;
+.blog {
+    background-color: #2c073a;
+    border-radius: 25px;
 
-}
+}.blog-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .blog-card {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  }
+  
+  .blog-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .blog-content h2 {
+    margin-top: 0.5rem;
+  }
+
+  .blog h1 {
+    font-size: 3rem;       /* Makes the heading big */
+    font-weight: bold;     /* Optional: make it bold */
+    text-align: center;    /* Optional: center it */
+    margin-bottom: 1rem;   /* Spacing under the heading */
+    color: #c18cd4;        /* Optional: brand color */
+  }
+  
+  .blog-intro {
+    font-size: 1.25rem;     /* Larger than base paragraph */
+    line-height: 1.6;       /* Good readability */
+    text-align: center;     /* Optional: center the intro */
+    max-width: 800px;       /* Optional: limit width */
+    margin: 0 auto 2rem;    /* Center block and space below */
+    color: #96dfd2;            /* Optional: soft text color */
+  }
+  

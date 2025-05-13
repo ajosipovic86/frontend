@@ -67,22 +67,13 @@ const Login = () => {
   return (
 
     <div className="container-fluid">
-	  	<div className="row">
-	  		<div className="col-md-6 login-intro">
-	  			<a href="index.html" className="me-auto">
+	  	<div className="column">
+      <div className="form-wrapper">
+	  		<div className="col-md-6 login-form">
+	  			<div><a href="index.html" className="me-auto">
 	  				<img alt="Logo" src="logoflora.png" />
 	  			</a>
-
-	  			<div>
-	  				<h1>Welcome to Freude Flora!</h1>
-	  				<p>Connect with nature in a meaningful way.</p>
-	  			</div>
-
-	  			<img alt="Slika" src="logoflora.png" />
-	  		</div>
-	  		<div className="col-md-6 login-form">
-	  			<div>
-	  				<h2>Welcome!</h2>
+	  				<h2>Welcome to Freude Flora!</h2>
 	  				<h5 className="mb-4">Log in and explore additional option.</h5>
 	  				<form  className={isLoading ? 'loading' : ''} onSubmit={handleLogin} >
                         {error && <div className="error">{error}</div>}
@@ -97,17 +88,19 @@ const Login = () => {
 	  					<input 
                         type="password" 
                         name="password"
-                        value={form.username} 
+                        value={form.password} 
                         onChange={handleChange} 
                         required />
 	  					<p className="text-end mb-4 mt-1">
-	  						<Link to="#">Forgot Password?</Link>
+              <Link to="/login/forgotpassword">Forgot Password?</Link>
+
 	  					</p>
 	  					<button type="submit" disabled={isLoading}>
                             {isLoading ? 'Signing In...' : 'Sign In'}</button>
-	  					<p className="sign-up">Don’t have an account? <Link to="register.html">Sign Up</Link></p>
+	  					<p className="sign-up">Don’t have an account? <Link to="/login/signup">Sign Up</Link></p>
 	  				</form>
 	  			</div>
+            </div>
             </div>
 	  	</div>
     </div>

@@ -1,35 +1,31 @@
-.izm-hamburger{
-    display: inline-block;
-    width: 16px;
-    height: 20px;
-    vertical-align: middle;
-    position: relative;
-  }
-  .izm-hamburger span {
-    position: absolute;
-    display: block;
-    height: 1px;
-    width: 100%;
-    background: #fff;
-    margin-top: 4px;
-    transition: all 300ms linear;
-  }
-  .izm-hamburger span.druga{
-    top: 4px;
-  }
-  .izm-hamburger span.treca{
-    top: 8px;
-  }
-  .navbar-toggler:not(.collapsed) .izm-hamburger span.prva{
-    transform: rotate(45deg);
-    top: 4px;
-  }
-  .navbar-toggler:not(.collapsed) .izm-hamburger span.druga{
-    display: none;
-  }
-  .navbar-toggler:not(.collapsed) .izm-hamburger span.treca{
-    transform: rotate(-45deg);
-    top: 4px;
-  }
- 
- 
+.header {
+  background-color: #175547;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 2rem;
+}
+
+.header nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.header nav ul li {
+  margin-right: 20px;
+}
+
+.header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.header .logo {
+  height: 50px;
+}

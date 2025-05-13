@@ -14,7 +14,7 @@ const About = () => {
     
         return (
             <div>
-                <h1>About Us</h1>
+              
                 <div dangerouslySetInnerHTML={{ __html: data.content.rendered }} />
             </div>
         );

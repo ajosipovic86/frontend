@@ -20,7 +20,7 @@ const BlogSingle = () => {
         
             return(
         <div className="single-post container">
-            <div className="row">
+            <div className="column">
                 <div className="col-md-10 m-auto">
                     
         <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />

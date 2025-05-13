@@ -1,0 +1,104 @@
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar .navbar-inner a {
+  font-size: 22px; /* Adjust the size as needed */
+  text-decoration: none; /* Optional: Removes underline from links */
+  color: #eaf3f5; /* Optional: Set the text color */
+  font-weight: bold;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #105c5c;
+  padding: 16px 20px;
+  flex-wrap: wrap;
+  color: white;
+  position: center;
+}
+ .img src basket {
+  width: 100px; /* or your desired width */
+  height: auto;
+ }
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar .navbar-logo img {
+  width: 120px; /* or your desired width */
+  height: auto;
+}
+
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  margin-left: 40px;
+}
+
+.nav-links a {
+  color: rgb(241, 187, 196);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-button {
+  color: rgb(238, 171, 208);
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    background-color: #157a8b;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 20px;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .navbar-right {
+    margin-left: auto;
+  }
+}

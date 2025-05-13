@@ -1,73 +1,38 @@
-import React, {useState, useEffect} from "react";
-import { Link } from "react-router-dom";
-import './Shop.css';
+import React from "react";
+import "./CartPage.css";
 
-const CartPage = () =>{
-    const [cart, setCart] = useState([]);
-    useEffect(() => {
-        const localCart = JSON.parse(localStorage.getItem('cart')) || [];
-        setCart(localCart);
-    }, [])
+const CartPage = ({ cartItems, onRemove, onCheckout }) => {
+  const getTotal = () =>
+    cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2);
 
-    const totalPrice = () => {
-        let total = 0;
-        cart.forEach(
-            (item) => {
-                total =total + item.price * item.quantity;
-            }
-        )
-        return total;
-    }
-    return (
-        <div className="cart-header">
-        <div className="py-5 text-center container">
-                <img className="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57" />
-                <div className="row">
-                    <h2 className="col-md-8 m-auto">Cart</h2>
-                    <p class="lead col-md-8 m-auto">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+  return (
+    <div className="container cart-page">
+      <h1>Your Cart</h1>
+      {cartItems.length === 0 ? (
+        <p>Your cart is empty.</p>
+      ) : (
+        <>
+          <div className="cart-items">
+            {cartItems.map((item) => (
+              <div key={item.id} className="cart-item">
+                <img src={item.image} alt={item.name} />
+                <div className="item-details">
+                  <h2>{item.name}</h2>
+                  <p>Price: ${item.price}</p>
+                  <p>Quantity: {item.quantity}</p>
+                  <button className="btn" onClick={() => onRemove(item.id)}>Remove</button>
                 </div>
-            </div>
-            <div className="container py-5">
-                <table className="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>Image</th>
-                            <th>Title</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                        </tr>
-                    </thead>
-                    <ul>
-                    <tbody>
-                        {cart.map((item) => (
-                            <tr key={item.id}>
-                                <td><img src={item.thumbnail}alt={item.title}width="44" /></td>
-                                <td><h4>{item.title}</h4></td>
-                                <td><span>{item.price}</span></td>
-                                <td><span>{item.quantity}</span></td>
-                            </tr>
-                        ))}
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td>Total price: </td>
-                            <td><span>{totalPrice()}</span></td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-        </div>
-    ;
-            {cart.map((item) => (
-                <li key={item.id}>
-                    <img src={item.thumbnail} alt={item.title} width="44" />
-                    <h4>{item.title}</h4>
-                    <span>{item.price}</span>
-                    <span>{item.quantity}</span>
-                </li>
+              </div>
             ))}
-        </ul>
-        </div>
-    );
-}
+          </div>
+          <div className="cart-summary">
+            <h2>Total: ${getTotal()}</h2>
+            <button className="btn checkout-btn" onClick={onCheckout}>Proceed to Checkout</button>
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
+
 export default CartPage;
